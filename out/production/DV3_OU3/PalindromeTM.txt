@@ -1,0 +1,37 @@
+States:         Q0 Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 Q9 Q10 Q11
+InputAlphabet:  a b
+TapeAlphabet:   a b $ # _
+InitialState:   Q0
+AcceptStates:   Q11
+
+Transitions:
+(Q0, a -> Q1, #, R)
+(Q0, b -> Q2, #, R)
+(Q1, a -> Q1, a, R)
+(Q1, b -> Q1, b, R)
+(Q1, # -> Q3, #, L)
+(Q1, _ -> Q3, _, L)
+(Q2, a -> Q2, a, R)
+(Q2, b -> Q2, b, R)
+(Q2, # -> Q4, #, L)
+(Q2, _ -> Q4, _, L)
+(Q3, a -> Q5, #, L)
+(Q3, # -> Q11, #, R)
+(Q4, b -> Q5, #, L)
+(Q4, # -> Q11, #, R)
+(Q5, a -> Q6, #, L)
+(Q5, b -> Q7, #, L)
+(Q5, # -> Q11, #, R)
+(Q6, a -> Q6, a, L)
+(Q6, b -> Q6, b, L)
+(Q6, # -> Q8, #, R)
+(Q6, $ -> Q8, $, R)
+(Q7, a -> Q7, a, L)
+(Q7, b -> Q7, b, L)
+(Q7, # -> Q9, #, R)
+(Q7, $ -> Q9, $, R)
+(Q8, a -> Q10, #, R)
+(Q9, b -> Q10, #, R)
+(Q10, a -> Q1, #, R)
+(Q10, b -> Q2, #, R)
+(Q10, # -> Q11, #, R)
